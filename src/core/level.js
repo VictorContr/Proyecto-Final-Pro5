@@ -67,7 +67,7 @@ export class Level extends Phaser.State {
 
         this.playerInput = this.game.device.desktop
             ? new BolaAzul_vc_jc.Keyboard(this.game)
-            : new BolaAzul_vc_jc.VirtualJoystick(this.game);
+            : new BolaAzul_vc_jc.Keyboard(this.game);
 
         const tilesetData = this.game.cache.getJSON('tileset-data');
         const mapData = this.game.cache.getJSON(`map-${this.levelName}`);
