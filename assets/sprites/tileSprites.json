@@ -1,0 +1,36 @@
+{
+    "frames": [
+        {
+            "filename": "block",
+            "frame": { "x": 128, "y": 64, "w": 32, "h": 32 }
+        },
+        {
+            "filename": "heart",
+            "frame": { "x": 160, "y": 64, "w": 32, "h": 32 }
+        },
+        {
+            "filename": "doorClosed",
+            "frame": { "x": 64, "y": 32, "w": 32, "h": 32 }
+        },
+        {
+            "filename": "doorOpened",
+            "frame": { "x": 96, "y": 32, "w": 32, "h": 32 }
+        },
+        {
+            "filename": "powerEmpty",
+            "frame": { "x": 128, "y": 256, "w": 32, "h": 32 }
+        },
+        {
+            "filename": "powerArrow",
+            "frame": { "x": 160, "y": 256, "w": 32, "h": 32 }
+        },
+        {
+            "filename": "powerBridge",
+            "frame": { "x": 192, "y": 256, "w": 32, "h": 32 }
+        },
+        {
+            "filename": "powerHammer",
+            "frame": { "x": 224, "y": 256, "w": 32, "h": 32 }
+        }
+    ]
+}

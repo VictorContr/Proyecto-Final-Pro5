@@ -1,0 +1,358 @@
+    
+@tailwind base;
+@tailwind components;
+
+    body {
+      background: linear-gradient(135deg, #1a2a6c, #222222);
+      background-attachment: fixed;
+      color: #e0e0e0;
+      font-family: 'Courier Prime', monospace;
+
+    }
+    
+    .ge-container {
+      border: 4px solid #1E90FF;
+      background: rgba(30, 144, 255, 0.1);
+      position: relative;
+      box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+    }
+    
+    .ge-container::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      right: 4px;
+      bottom: 4px;
+      border: 2px solid rgba(30, 144, 255, 0.3);
+      pointer-events: none;
+    }
+    
+    .pixel-art {
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+    }
+    
+    .btn-ge {
+      background: #FF69B4;
+      border: 3px solid #555555;
+      color: white;
+      font-family: 'VT323', monospace;
+      font-size: 25px;
+      letter-spacing: 1px;
+      padding: 8px 24px;
+      text-transform: uppercase;
+      box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+      transition: all 0.1s ease;
+      position: relative;
+    }
+    
+    .btn-ge:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+      background: #ff4da8;
+    }
+    
+    .btn-ge:active {
+      transform: translate(4px, 4px);
+      box-shadow: none;
+    }
+    
+    .btn-ge.btn-blue {
+      background: #1E90FF;
+    }
+    
+    .btn-ge.btn-blue:hover {
+      background: #0d7ae6;
+    }
+    
+    .btn-ge.btn-green {
+      background: #2ECC71;
+    }
+    
+    .btn-ge.btn-green:hover {
+      background: #27ae60;
+    }
+    
+    .btn-ge.btn-yellow {
+      background: #F1C40F;
+      color: #222;
+    }
+    
+    .btn-ge.btn-yellow:hover {
+      background: #d4ac0d;
+    }
+    
+    .ge-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    
+    .ge-table th, .ge-table td {
+      padding: 10px;
+      text-align: left;
+      border: 2px solid #1E90FF;
+      background: rgba(30, 144, 255, 0.1);
+    }
+    
+    .ge-table th {
+      background: #1E90FF;
+      color: #fff;
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    
+    .game-container {
+      position: relative;
+      overflow: hidden;
+      border: 4px solid #1E90FF;
+      background: #222;
+      box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+    }
+    
+    .game-screen {
+      background: #333;
+      position: relative;
+    }
+    
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-gap: 1px;
+    }
+    
+    .game-cell {
+      background: #444;
+      aspect-ratio: 1/1;
+      border: 1px solid rgba(85, 85, 85, 0.5);
+    }
+    
+    .game-cell.wall {
+      background: #1E90FF;
+    }
+    
+    .game-cell.lolo {
+    background-image: url('../img/LOLO.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    }
+    
+    .game-cell.heart {
+    background-image: url('../img/chest.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    }
+    
+    .game-cell.heart::before {
+      content: '♥';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #222;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    .game-cell.enemy {
+     background-image: url('../img/ENEMY.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    }
+    
+    .key {
+      display: inline-block;
+      background: #555;
+      color: white;
+      padding: 2px 8px;
+      margin: 0 2px;
+      border-radius: 3px;
+      font-family: 'VT323', monospace;
+      font-size: 16px;
+    }
+    
+    .pixel-border {
+      border: 4px solid #1E90FF;
+      box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+    }
+    
+    .dev-card {
+      background: rgba(30, 144, 255, 0.1);
+      border: 3px solid #1E90FF;
+      box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+    }
+    
+    .mission-vision {
+      background: linear-gradient(135deg, #1a2a6c, #1E90FF);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mission-vision::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px),
+        linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      z-index: 0;
+    }
+    
+    .glow {
+      animation: glow 1.5s infinite alternate;
+    }
+    
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 5px -5px #2ECC71;
+      }
+      to {
+        box-shadow: 0 0 10px 3px #2ECC71;
+      }
+    }
+    
+    .community-bubble {
+      background: rgba(85, 85, 85, 0.3);
+      border: 2px solid #1E90FF;
+      border-radius: 16px;
+    }
+
+    /* Responsive */
+    /* Estilos personalizados para el menú móvil */
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+    }
+    
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+    
+     .mobile-menu.open li a {
+      font-size: 1.2rem;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* login */
+            .ge-container {
+            border: 4px solid #1E90FF;
+            background: rgba(30, 144, 255, 0.1);
+            position: relative;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+        }
+        
+        .ge-container::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 2px solid rgba(30, 144, 255, 0.3);
+            pointer-events: none;
+        }
+        
+        .input-ge {
+            background: rgba(30, 144, 255, 0.1);
+            border: 2px solid #1E90FF;
+            color: white;
+            font-family: 'Courier Prime', monospace;
+            padding: 12px 15px;
+            width: 100%;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .input-ge:focus {
+            outline: none;
+            border-color: #FF69B4;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        
+        .input-ge::placeholder {
+            color: #888;
+        }
+            .btn-ge.btn-blue {
+            background: #1E90FF;
+        }
+        
+        .btn-ge.btn-blue:hover {
+            background: #0d7ae6;
+        }
+    .pixel-border {
+            border: 4px solid #1E90FF;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+        }
+        
+        .eye-icon {
+            filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+        }
+    /* register */
+            .character-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .character-option {
+            border: 2px solid #1E90FF;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .character-option:hover, .character-option.selected {
+            border-color: #FF69B4;
+            background: rgba(255, 105, 180, 0.1);
+        }
+        
+        .character-avatar {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            background: #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 24px;
+        }
+
+    @tailwind utilities;

@@ -1,0 +1,70 @@
+.dialogo {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  padding: 1.5rem 2rem;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  z-index: 9999;
+  color: white;
+  max-width: 80%;
+  width: fit-content;
+  height: fit-content;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  animation: fadeInOut 3s ease forwards;
+}
+
+/* Colores */
+.verde {
+  background-color: #4CAF50;
+}
+
+.amarillo {
+  background-color: #FFC107;
+  color: black;
+}
+
+.rojo {
+  background-color: #F44336;
+}
+
+.rosado{
+    background-color: #ff4da8;
+}
+
+/* Animación */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+dialog[open].dialogo {
+  display: flex; /* solo visible cuando está abierto */
+}
+
+.dialogo-con-imagen {
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dialogo-con-imagen img {
+  height: 2.5rem;
+  width: auto;
+}

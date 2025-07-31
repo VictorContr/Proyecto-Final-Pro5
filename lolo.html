@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventuras de Lolo - Perfil</title>
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link rel="stylesheet" href="./css/dialogs.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/inicio.css">
+    <link rel="stylesheet" href="./css/modal.css">
+</head>
+<body id="loloHTML" class="bg-gray-900">
+    <header class="bg-ge-dark py-4 px-6 flex justify-between items-center border-b-4 border-ge-yellow pixel-border">
+        <div class="flex items-center">
+            <div class="bg-ge-black w-12 h-12 flex items-center justify-center border-4 border-ge-yellow pixel-border mr-4">
+                <img class="h-10" src="./img/Game Enjoyers Logo.jpg" alt="logo">
+            </div>
+            <h1 class="text-2xl font-press-start text-ge-yellow">AVENTURAS DE LOLO</h1>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+            <div class="text-right hidden md:block">
+                <p class="text-ge-blue font-vt323 text-lg">¡Hola, <span id="nombrePerfil" class="text-ge-yellow">Invitado</span>!</p>
+                <p class="text-ge-blue font-courier text-sm"><span id="correoPerfil">no@iniciado.com</span></p>
+            </div>
+            <button id="cerrarSesion" class="btn-ge btn-pink">
+                CERRAR SESIÓN
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-3xl mx-auto ge-container p-8 rounded-lg">
+            <h2 class="font-press-start text-2xl text-ge-yellow mb-6">PERFIL DE USUARIO</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div>
+                    <h3 class="text-ge-blue font-vt323 text-xl mb-2">INFORMACIÓN PERSONAL</h3>
+                    <ul class="font-courier text-ge-blue space-y-2">
+                        <li><span class="text-ge-yellow">Nombre:</span> <span id="nombreUsuario">-</span></li>
+                        <li><span class="text-ge-yellow">Correo:</span> <span id="correoUsuario">-</span></li>
+                        <li><span class="text-ge-yellow">Teléfono:</span> <span id="telefonoUsuario">-</span></li>
+                        <li><span class="text-ge-yellow">Miembro desde:</span> <span id="fechaRegistro">-</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-ge-blue font-vt323 text-xl mb-2">ESTADÍSTICAS</h3>
+                    <ul class="font-courier text-ge-blue space-y-2">
+                        <li><span class="text-ge-yellow">Nivel alcanzado:</span> 3</li>
+                        <li><span class="text-ge-yellow">Puntuación máxima:</span> 5,240</li>
+                        <li><span class="text-ge-yellow">Logros desbloqueados:</span> 2/10</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-ge-blue pt-6">
+                <h3 class="text-ge-blue font-vt323 text-xl mb-4">OPCIONES</h3>
+                <div class="flex flex-wrap gap-4">
+                    <button class="btn-ge btn-pink">EDITAR PERFIL</button>
+                    <button class="btn-ge bg-ge-blue text-white hover:bg-blue-600">CAMBIAR CONTRASEÑA</button>
+                    <button class="btn-ge bg-gray-600 text-white hover:bg-gray-700">ELIMINAR CUENTA</button>
+                    <button class="btn-ge btn-pink glow mb-4">
+                        <a href="./game.html">JUGAR AHORA</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+        <!-- Modal Dialog -->
+    <div id="modalContainer" class="modal-container fixed inset-0 flex items-center justify-center z-50 opacity-0 transition-opacity duration-300">
+        <div id="modalContent" class="modal-content bg-black dark:bg-dark-800 w-full max-w-md mx-4">
+            <div id="modalHeader" class="modal-header px-6 py-4 rounded-t-lg">
+                <div class="flex items-center">
+                    <i id="modalIcon" class="modal-icon"></i>
+                    <h2 id="modalTitle" class="text-xl font-bold text-white"></h2>
+                </div>
+                <button id="modalClose" class="text-white hover:text-gray-200 text-xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="modalBody" class="modal-body px-6 py-4">
+                <p id="modalMessage" class="text-gray-700 dark:text-gray-300"></p>
+            </div>
+                <div class="modal-footer">
+                    <button id="modalCancel" class="modal-btn-cancel" style="display: none;">
+                        Cancelar
+                    </button>
+                    <button id="modalAction" class="modal-btn-accept">
+                        Aceptar
+                    </button>
+                </div>
+        </div>
+    </div> 
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
