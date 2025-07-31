@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/modal.css">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@2.6.2/build/phaser.min.js"></script>
     <title>Adventure of Lolo</title>
 </head>
        <style type="text/css">
@@ -28,7 +30,31 @@
         </style>
 <body id="game">
         <div id="orientation"></div>
+            <!-- Modal Dialog -->
+    <div id="modalContainer" class="modal-container fixed inset-0 flex items-center justify-center z-50 opacity-0 transition-opacity duration-300">
+        <div id="modalContent" class="modal-content bg-black dark:bg-dark-800 w-full max-w-md mx-4">
+            <div id="modalHeader" class="modal-header px-6 py-4 rounded-t-lg">
+                <div class="flex items-center">
+                    <i id="modalIcon" class="modal-icon"></i>
+                    <h2 id="modalTitle" class="text-xl font-bold text-white"></h2>
+                </div>
+                <button id="modalClose" class="text-white hover:text-gray-200 text-xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="modalBody" class="modal-body px-6 py-4">
+                <p id="modalMessage" class="text-gray-700 dark:text-gray-300"></p>
+            </div>
+                <div class="modal-footer">
+                    <button id="modalCancel" class="modal-btn-cancel" style="display: none;">
+                        Cancelar
+                    </button>
+                    <button id="modalAction" class="modal-btn-accept">
+                        Aceptar
+                    </button>
+                </div>
+        </div>
+    </div> 
 </body>
-<script src="./libs/phaser.js"></script>        
 <script type="module" src="./js/app.js"></script>
 </html>

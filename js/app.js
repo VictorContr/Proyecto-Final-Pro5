@@ -13,8 +13,9 @@ import { Boot } from "../src/core/boot.js";
 import { Loader } from "../src/core/loader.js";
 import { Menu } from "../src/core/menu.js";
 import { Level } from "../src/core/level.js";
-export const modal_vc_jc = new ModalDialog_vc_jc();
-    tailwind.config = {
+
+    if (landing_vc_jc) {
+          tailwind.config = {
       theme: {
         extend: {
           colors: {
@@ -36,7 +37,7 @@ export const modal_vc_jc = new ModalDialog_vc_jc();
         }
       }
     }
-    if (landing_vc_jc) {
+    const modal_vc_jc = new ModalDialog_vc_jc();
       animateLolo_vc_jc();
       setupMobileMenu_vc_jc();
       cargarTestimonios_vc_jc();
@@ -47,20 +48,91 @@ export const modal_vc_jc = new ModalDialog_vc_jc();
 
     }
     if (login_vc_jc) {
+          tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ge-blue': '#1E90FF',
+            'ge-pink': '#FF69B4',
+            'ge-green': '#2ECC71',
+            'ge-gray': '#555555',
+            'ge-yellow': '#F1C40F',
+            'ge-dark': '#222222'
+          },
+          fontFamily: {
+            'press-start': ['"Press Start 2P"', 'cursive'],
+            'vt323': ['VT323', 'monospace'],
+            'courier': ['Courier Prime', 'monospace']
+          },
+          boxShadow: {
+            'ge': '4px 4px 0px rgba(0,0,0,0.3)',
+          }
+        }
+      }
+    }
+    const modal_vc_jc = new ModalDialog_vc_jc();
       toggleEye_vc_jc();
       configurarLogin_vc_jc(modal_vc_jc);
     }
     if (register_vc_jc) {
+          tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ge-blue': '#1E90FF',
+            'ge-pink': '#FF69B4',
+            'ge-green': '#2ECC71',
+            'ge-gray': '#555555',
+            'ge-yellow': '#F1C40F',
+            'ge-dark': '#222222'
+          },
+          fontFamily: {
+            'press-start': ['"Press Start 2P"', 'cursive'],
+            'vt323': ['VT323', 'monospace'],
+            'courier': ['Courier Prime', 'monospace']
+          },
+          boxShadow: {
+            'ge': '4px 4px 0px rgba(0,0,0,0.3)',
+          }
+        }
+      }
+    }
+    const modal_vc_jc = new ModalDialog_vc_jc();
+
       toggleEye_vc_jc();
       configurarRegistro_vc_jc(modal_vc_jc);
     }
 
     if (loloHTML_vc_jc) {
+          tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ge-blue': '#1E90FF',
+            'ge-pink': '#FF69B4',
+            'ge-green': '#2ECC71',
+            'ge-gray': '#555555',
+            'ge-yellow': '#F1C40F',
+            'ge-dark': '#222222'
+          },
+          fontFamily: {
+            'press-start': ['"Press Start 2P"', 'cursive'],
+            'vt323': ['VT323', 'monospace'],
+            'courier': ['Courier Prime', 'monospace']
+          },
+          boxShadow: {
+            'ge': '4px 4px 0px rgba(0,0,0,0.3)',
+          }
+        }
+      }
+    }
+    const modal_vc_jc = new ModalDialog_vc_jc();
+
         configurarCerrarSesion_vc_jc(modal_vc_jc);
     }
     if (gameHTML_vc_ga) {
-      
-      BolaAzul_vc_jc.Boot = BolaAzul_vc_jc.Boot || class {};
+
+              BolaAzul_vc_jc.Boot = BolaAzul_vc_jc.Boot || class {};
       BolaAzul_vc_jc.Loader = BolaAzul_vc_jc.Loader || class {};
       BolaAzul_vc_jc.Menu = BolaAzul_vc_jc.Menu || class {};
       BolaAzul_vc_jc.Level = BolaAzul_vc_jc.Level || class {};

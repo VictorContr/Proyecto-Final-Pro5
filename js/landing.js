@@ -1,6 +1,6 @@
 import { ModalDialog_vc_jc } from "./modal.js";
 
-const modal_vc_jc = new ModalDialog_vc_jc()
+const modal_vc_jc = new ModalDialog_vc_jc();
 export const landing_vc_jc = document.getElementById("landing");
 // Función para la animación del juego
 export const animateLolo_vc_jc=()=> {
