@@ -13,6 +13,20 @@ import { Boot } from "../src/core/boot.js";
 import { Loader } from "../src/core/loader.js";
 import { Menu } from "../src/core/menu.js";
 import { Level } from "../src/core/level.js";
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+ // La misma configuración que usas en firebaseCerrarSesion.js
+ const firebaseConfig = {
+   apiKey: "AIzaSyAy3cfWU67kHJPztxUCRsycWqGeCSu4GaI",
+   authDomain: "login-progv-proyecto-jc-vc.firebaseapp.com",
+   projectId: "login-progv-proyecto-jc-vc",
+   storageBucket: "login-progv-proyecto-jc-vc.appspot.com",
+   messagingSenderId: "719108033580",
+   appId: "1:719108033580:web:2bb76b1e1004c5a5789589"
+ };
+ const appFirebase = initializeApp(firebaseConfig);
+ const auth = getAuth(appFirebase);
 
     if (landing_vc_jc) {
           tailwind.config = {
@@ -131,15 +145,24 @@ import { Level } from "../src/core/level.js";
         configurarCerrarSesion_vc_jc(modal_vc_jc);
     }
     if (gameHTML_vc_ga) {
-
-              BolaAzul_vc_jc.Boot = BolaAzul_vc_jc.Boot || class {};
+      
+     onAuthStateChanged(auth, user => {
+     if (!user) {
+       location.replace('./login.html');
+     } else {
+       // Si está logueado, arranca tu juego
+            BolaAzul_vc_jc.Boot = BolaAzul_vc_jc.Boot || class {};
       BolaAzul_vc_jc.Loader = BolaAzul_vc_jc.Loader || class {};
       BolaAzul_vc_jc.Menu = BolaAzul_vc_jc.Menu || class {};
       BolaAzul_vc_jc.Level = BolaAzul_vc_jc.Level || class {};
       BolaAzul_vc_jc.Global_vc_jc = BolaAzul_vc_jc.Global_vc_jc || { Tiles: {}, Entities: {} };
       BolaAzul_vc_jc.Configurar_vc_jc = BolaAzul_vc_jc.Configurar_vc_jc || { world: { levels: [] } }
       
-      window.addEventListener('load', function () {
+     
           BolaAzul_vc_jc.iniciar_vc_jc();
-      });
+      
+     }
+   }); 
+      
+         
     }
