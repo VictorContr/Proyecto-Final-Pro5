@@ -59,6 +59,8 @@ const configurarAuthState = (modal_vc_jc, elementosUI) => {
     if (elementosUI.correoUsuario) elementosUI.correoUsuario.textContent = datosUsuario.correo;
     if (elementosUI.telefonoUsuario) elementosUI.telefonoUsuario.textContent = datosUsuario.telefono;
     if (elementosUI.fechaRegistro) elementosUI.fechaRegistro.textContent = datosUsuario.fechaRegistro?.toDate?.().toLocaleDateString() || datosUsuario.fechaRegistro;
+    if (elementosUI.nivelRanking) {  elementosUI.nivelRanking.textContent = datosUsuario.nivelRanking || '0';}
+
   });
 
   return {
@@ -77,7 +79,8 @@ export const configurarCerrarSesion_vc_jc = (modal_vc_jc) => {
     nombreUsuario: document.getElementById('nombreUsuario'),
     correoUsuario: document.getElementById('correoUsuario'),
     telefonoUsuario: document.getElementById('telefonoUsuario'),
-    fechaRegistro: document.getElementById('fechaRegistro')
+    fechaRegistro: document.getElementById('fechaRegistro'),
+    nivelRanking: document.getElementById('nivelRanking') 
   });
 
   botonCerrarSesion.addEventListener('click', async () => {

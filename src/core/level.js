@@ -58,6 +58,10 @@ export class Level extends Phaser.State {
 
     create() {
         BolaAzul_vc_jc.Save.saveData('currentLevel', this.levelName);
+        if (BolaAzul_vc_jc.Save.saveLevelToFirebase) {
+    BolaAzul_vc_jc.Save.saveLevelToFirebase(this.levelName);
+}
+
         this.currentPhase = Level.PHASES.INITIAL;
 
         this.onPlayerMoved = new Phaser.Signal();
