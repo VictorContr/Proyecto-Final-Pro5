@@ -3,7 +3,7 @@ import { configurarLogin_vc_jc, login_vc_jc, toggleEye_vc_jc } from "../firebase
 import { configurarRegistro_vc_jc, register_vc_jc } from "../firebase/firebaseRegister.js";
 import { animateLolo_vc_jc, cargarTestimonios_vc_jc, landing_vc_jc, mostrarMapaConPin_vc_ga, setupFormSubmission_vc_jc, setupMobileMenu_vc_jc } from "./landing.js";
 import { ModalDialog_vc_jc } from "./modal.js";
-import { BolaAzul_vc_jc, gameHTML_vc_ga } from "../src/blueball.js";
+import { BolaAzul_vc_jc, gameHTML_vc_jc } from "../src/blueball.js";
 import { Global_vc_jc } from "../src/global.js";
 import { Configurar_vc_jc } from "../src/config.js";
 import { Entity } from "../src/entities/entity.js";
@@ -144,8 +144,14 @@ import { Level } from "../src/core/level.js";
 
         configurarCerrarSesion_vc_jc(modal_vc_jc);
     }
-    if (gameHTML_vc_ga) {
-      
+    if (gameHTML_vc_jc) {
+      const volveraPerfil = document.getElementById('btn-regresar-perfil');
+      if (volveraPerfil) {
+  volveraPerfil.addEventListener('click', () => {
+    // Redirige al perfil; ajusta la ruta según tu proyecto:
+    location.replace('./lolo.html');
+  });
+}
      onAuthStateChanged(auth, user => {
      if (!user) {
        location.replace('./login.html');

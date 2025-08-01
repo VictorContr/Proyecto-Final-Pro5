@@ -125,3 +125,35 @@
         .dark .modal-body p {
             color: #F3EFF5;
         }
+
+
+        #btn-regresar-perfil {
+  position: fixed;        /* Siempre visible */
+  top: 16px;              /* Margen arriba */
+  left: 16px;             /* Margen izquierda */
+  z-index: 10000;         /* Encima de todo */
+  padding: 8px 12px;
+  background-color: #EC4899;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform .1s ease;
+  font-family: 'VT323', monospace;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    border: 3px solid #555555;
+    border-radius: 5;
+    transition: all 0.3s;
+}
+#btn-regresar-perfil:hover {
+  transform: scale(1.05);
+}
+
+#btn-regresar-perfil img {
+  width: 20px;               /* icono pequeño */
+  height: 20px;
+}

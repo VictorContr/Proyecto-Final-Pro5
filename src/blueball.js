@@ -91,7 +91,7 @@ export const BolaAzul_vc_jc = {
     Ayudante_vc_jc: AyudanteJuego_vc_jc
 };
 
-export const gameHTML_vc_ga = document.getElementById('game')
+export const gameHTML_vc_jc = document.getElementById('game')
 
 // Compatibilidad con clases auxiliares (simuladas o reales)
 BolaAzul_vc_jc.Boot = BolaAzul_vc_jc.Boot || class {};
