@@ -31,6 +31,17 @@
 <body id="game">
         <button id="btn-regresar-perfil">← Volver al perfil <img src="./img/LOLO.png" alt="" srcset=""></button>
         <div id="orientation"></div>
+ <!-- Modal de Nivel Superado -->
+<div id="level-up-modal" class="hidden">
+  <div class="level-up-content">
+    <h2 id="levelUpTitle">¡Nivel superado!</h2>
+    <p id="levelUpMessage">Has completado levelX-Y</p>
+    <button id="levelUpClose">¡Continuar!</button>
+  </div>
+</div>
+
+
+
             <!-- Modal Dialog -->
     <div id="modalContainer" class="modal-container fixed inset-0 flex items-center justify-center z-50 opacity-0 transition-opacity duration-300">
         <div id="modalContent" class="modal-content bg-black dark:bg-dark-800 w-full max-w-md mx-4">

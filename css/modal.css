@@ -157,3 +157,129 @@
   width: 20px;               /* icono pequeño */
   height: 20px;
 }
+
+
+/* Oculta por defecto */
+#level-up-modal.hidden {
+  display: none;
+}
+
+/* Muestra en flex cuando no tiene .hidden */
+#level-up-modal {
+  display: none;
+}
+#level-up-modal.show {
+  display: flex;
+}
+
+
+/* Overlay semitransparente que cubre toda la ventana */
+#level-up-modal {
+  display: none;               /* oculto por defecto */
+}
+#level-up-modal.show {
+  display: flex;               /* flex para centrar el contenido */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor interno del modal */
+.level-up-content {
+  background: #1E1E2F;         /* fondo oscuro */
+  color: #F1C40F;              /* texto amarillo */
+  padding: 2rem;               /* espacio interior amplio */
+  border-radius: 1rem;         /* bordes redondeados */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+  text-align: center;
+  max-width: 90%;
+  width: 320px;
+}
+
+/* Título */
+.level-up-content h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Mensaje */
+.level-up-content p {
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Botón */
+#levelUpClose {
+  background: #F1C40F;        /* amarillo vivo */
+  color: #1E1E2F;             /* texto oscuro */
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+#levelUpClose:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay semitransparente */
+#level-up-modal {
+  display: none;               /* Oculto por defecto */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;               /* Muy arriba */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cuando mostramos el modal */
+#level-up-modal.show {
+  display: flex;
+}
+
+/* Contenedor del mensaje */
+.level-up-content {
+  background: #222;            /* Fondo oscuro */
+  color: #f1c40f;              /* Texto amarillo */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  max-width: 90%;
+  width: 320px;
+  text-align: center;
+}
+
+/* Título */
+.level-up-content h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Mensaje */
+.level-up-content p {
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Botón */
+#levelUpClose {
+  background: #f1c40f;
+  color: #222;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+#levelUpClose:hover {
+  transform: scale(1.05);
+}

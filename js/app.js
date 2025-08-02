@@ -185,11 +185,41 @@ import {
     location.replace('./lolo.html');
   });
 }
+      // 1) Referencias al modal
+  const levelModal     = document.getElementById('level-up-modal');
+  const levelUpClose   = document.getElementById('levelUpClose');
+  const levelUpTitle   = document.getElementById('levelUpTitle');
+  const levelUpMessage = document.getElementById('levelUpMessage');
+
+  // 2) Bandera para saltar la primera vez
+  let isFirstSave = true;
+
+  // 3) Monkey-patch para interceptar saveData
+  const originalSaveData = BolaAzul_vc_jc.Save.saveData.bind(BolaAzul_vc_jc.Save);
+  BolaAzul_vc_jc.Save.saveData = (key, data) => {
+    originalSaveData(key, data);
+
+    if (key === 'currentLevel') {
+      if (isFirstSave) {
+        isFirstSave = false;   // ignoramos la primera invocación
+      } else {
+        levelUpTitle.textContent   = '¡Nivel superado!';
+        levelUpMessage.textContent = `Has completado el nivel`;
+        levelModal.classList.add('show');
+      }
+    }
+  };
+
+  // 4) Cerrar modal al clic
+  levelUpClose.addEventListener('click', () => {
+    levelModal.classList.remove('show');
+  });
      onAuthStateChanged(auth, user => {
      if (!user) {
        location.replace('./login.html');
      } else {
-       // Si está logueado, arranca tu juego
+      
+       
             BolaAzul_vc_jc.Boot = BolaAzul_vc_jc.Boot || class {};
       BolaAzul_vc_jc.Loader = BolaAzul_vc_jc.Loader || class {};
       BolaAzul_vc_jc.Menu = BolaAzul_vc_jc.Menu || class {};
