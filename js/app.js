@@ -13,6 +13,14 @@ import { Boot } from "../src/core/boot.js";
 import { Loader } from "../src/core/loader.js";
 import { Menu } from "../src/core/menu.js";
 import { Level } from "../src/core/level.js";
+// ==== Aquí añades las nuevas importaciones de Firestore ====
+import {
+  getFirestore,
+  collection,
+  query,
+  orderBy,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 
@@ -27,6 +35,7 @@ import { Level } from "../src/core/level.js";
  };
  const appFirebase = initializeApp(firebaseConfig);
  const auth = getAuth(appFirebase);
+ const db = getFirestore(appFirebase); // Si aún no lo tienes
 
     if (landing_vc_jc) {
           tailwind.config = {
@@ -143,6 +152,30 @@ import { Level } from "../src/core/level.js";
     const modal_vc_jc = new ModalDialog_vc_jc();
 
         configurarCerrarSesion_vc_jc(modal_vc_jc);
+
+     // Función para cargar y pintar el ranking
+  async function loadRanking() {
+    const usuariosRef = collection(db, "usuarios");
+    const q = query(usuariosRef, orderBy("nivelRanking", "desc"));
+    const snapshot = await getDocs(q);
+    const tbody = document
+      .getElementById("rankingTable")
+      .querySelector("tbody");
+    tbody.innerHTML = ""; // limpia filas previas
+
+    snapshot.forEach(docu => {
+      const { nombre, nivelRanking } = docu.data();
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td class="px-4 py-2 border border-ge-blue">${nombre || "-"}</td>
+        <td class="px-4 py-2 border border-ge-blue">${nivelRanking || "-"}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // Después de configurar el estado de sesión, llamamos al ranking
+  loadRanking().catch(err => console.error("Error cargando ranking:", err));    
     }
     if (gameHTML_vc_jc) {
       const volveraPerfil = document.getElementById('btn-regresar-perfil');
