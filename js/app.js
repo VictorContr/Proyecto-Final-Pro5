@@ -195,25 +195,47 @@ import {
   let isFirstSave = true;
 
   // 3) Monkey-patch para interceptar saveData
-  const originalSaveData = BolaAzul_vc_jc.Save.saveData.bind(BolaAzul_vc_jc.Save);
-  BolaAzul_vc_jc.Save.saveData = (key, data) => {
-    originalSaveData(key, data);
+const originalSaveData = BolaAzul_vc_jc.Save.saveData.bind(BolaAzul_vc_jc.Save);
+BolaAzul_vc_jc.Save.saveData = (key, data) => {
+  // Antes de guardar, recuperamos el nivel previo de localStorage
+  const prev = localStorage.getItem(key);
 
-    if (key === 'currentLevel') {
-      if (isFirstSave) {
-        isFirstSave = false;   // ignoramos la primera invocación
-      } else {
+  // Ejecutamos el guardado normal
+  originalSaveData(key, data);
+
+  if (key === 'currentLevel') {
+    if (isFirstSave) {
+      // Ignoramos la primera invocación (inicialización del nivel 1)
+      isFirstSave = false;
+    } else {
+      // Sólo si cambia y es distinto del previo, mostramos modal
+      if (data !== prev) {
         levelUpTitle.textContent   = '¡Nivel superado!';
         levelUpMessage.textContent = `Has completado el nivel`;
         levelModal.classList.add('show');
       }
     }
-  };
-
+  }
+};
   // 4) Cerrar modal al clic
   levelUpClose.addEventListener('click', () => {
     levelModal.classList.remove('show');
   });
+  // 1) Referencias al botón y al modal
+const btnControles    = document.getElementById('btn-controles');
+const controlesModal  = document.getElementById('controles-modal');
+const controlesClose  = document.getElementById('controles-close');
+
+// 2) Abrir modal al clicar “Controles”
+btnControles.addEventListener('click', () => {
+  controlesModal.classList.add('flex');   // mostrará con display:flex
+});
+
+// 3) Cerrar modal
+controlesClose.addEventListener('click', () => {
+  controlesModal.classList.remove('flex');
+});
+
      onAuthStateChanged(auth, user => {
      if (!user) {
        location.replace('./login.html');

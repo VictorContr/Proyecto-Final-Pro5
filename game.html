@@ -30,6 +30,9 @@
         </style>
 <body id="game">
         <button id="btn-regresar-perfil">← Volver al perfil <img src="./img/LOLO.png" alt="" srcset=""></button>
+        <button id="btn-controles" class="btn-ge btn-blue">
+  📖 Controles
+</button>
         <div id="orientation"></div>
  <!-- Modal de Nivel Superado -->
 <div id="level-up-modal" class="hidden">
@@ -40,7 +43,16 @@
   </div>
 </div>
 
-
+<div id="controles-modal" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-lg overflow-hidden shadow-lg max-w-md mx-4">
+    <img src="./img/controles.jpg" alt="Controles del juego" class="w-full h-auto">
+    <div class="p-4 text-right">
+      <button id="controles-close" class="px-4 py-2 bg-ge-pink text-white rounded hover:bg-pink-600">
+        Cerrar
+      </button>
+    </div>
+  </div>
+</div>
 
             <!-- Modal Dialog -->
     <div id="modalContainer" class="modal-container fixed inset-0 flex items-center justify-center z-50 opacity-0 transition-opacity duration-300">
@@ -67,6 +79,8 @@
                 </div>
         </div>
     </div> 
+
+    
 </body>
 <script type="module" src="./js/app.js"></script>
 </html>
